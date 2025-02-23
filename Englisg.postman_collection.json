@@ -1,0 +1,635 @@
+{
+	"info": {
+		"_postman_id": "0d431fae-32ac-4998-bccb-bd195aaf756d",
+		"name": "WebApp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33833506"
+	},
+	"item": [
+		{
+			"name": "template",
+			"item": [
+				{
+					"name": "create template",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"code\": \"ABC123\",\r\n    \"title\": \"Sample Title\",\r\n    \"content\": \"This is the content of the template.\",\r\n    \"template_type\": \"NOTIFICATION\",\r\n    \"is_active\": true\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.0.1:8080/api/v1/template?test_id=1&part=1",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"template"
+							],
+							"query": [
+								{
+									"key": "test_id",
+									"value": "1"
+								},
+								{
+									"key": "part",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Template",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"code\": \"ABC123\",\r\n    \"title\": \"Sample Title ${name}\",\r\n    \"content\": \"This is the content of the template.\",\r\n    \"template_type\": \"NOTIFICATION\",\r\n    \"is_active\": false\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.0.1:8080/api/v1/template/3",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"template",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get template",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE3NDAzNjQxOTQsInN1YiI6InRyaW1haSIsInVzZXJfaWQiOiIxIiwidXNlcm5hbWUiOiJ0cmltYWkifQ.WNFW3T-pe7er2Fhz2EzZ7cMlG7dzXKzQVdlTEZK-V38",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"code\": \"ABC123\",\r\n    \"title\": \"Sample Title\",\r\n    \"content\": \"This is the content of the template.\",\r\n    \"template_type\": \"NOTIFICATION\",\r\n    \"is_active\": true\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.0.1:8080/api/v1/template?page=1&limit=1",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"template"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deleted template",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "127.0.0.1:8080/api/v1/template/1",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"template",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user-test",
+			"item": [
+				{
+					"name": "doTest",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE3NDAzMTY2MjQsInN1YiI6InRyaW1haSIsInVzZXJfaWQiOiIxIiwidXNlcm5hbWUiOiJ0cmltYWkifQ.dLeBvlxVXwb4ENKVZzzswiQP_1RilIDffi0S-TCO-Rk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"test_id\" : 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.0.1:8080/api/v1/user/doTest",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"doTest"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "submitTest",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE3NDAzMTY2MjQsInN1YiI6InRyaW1haSIsInVzZXJfaWQiOiIxIiwidXNlcm5hbWUiOiJ0cmltYWkifQ.dLeBvlxVXwb4ENKVZzzswiQP_1RilIDffi0S-TCO-Rk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"listening\": {\r\n        \"1\": \"A\",\r\n        \"2\": \"C\",\r\n        \"3\": \"D\"\r\n    },\r\n    \"reading\": {\r\n        \"4\": \"B\",\r\n        \"5\": \"D\",\r\n        \"6\": \"A\"\r\n    }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.0.1:8080/api/v1/user/submitTest",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"submitTest"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"trimai\",\r\n    \"password\": \"trimai\",\r\n    \"name\": \"Trimai\",\r\n    \"email\": \"maivantri309@gmail.com\",\r\n    \"phone\": \"0867153008\",\r\n    \"address\": \"ND\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:8080/api/v1/register",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"trimai\",\r\n    \"password\": \"trimai\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:8080/api/v1/login",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get ALL Test",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"johndoe\",\r\n    \"password\": \"securepassword\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:8080/api/v1/test?limit=100&offset=0&count=true",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"test"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "100"
+						},
+						{
+							"key": "offset",
+							"value": "0"
+						},
+						{
+							"key": "count",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Question Test Part",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"johndoe\",\r\n    \"password\": \"securepassword\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:8080/api/v1/questions?test_id=1&part=1",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"questions"
+					],
+					"query": [
+						{
+							"key": "test_id",
+							"value": "1"
+						},
+						{
+							"key": "part",
+							"value": "1"
+						},
+						{
+							"key": "count",
+							"value": "true",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Test",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"TOEIC ETS1\",\r\n    \"total_parts\": 7,\r\n    \"questions\": 10,\r\n    \"test_type\": \"TOEIC\",\r\n    \"year\": \"2024\",\r\n    \"is_active\" : true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:8080/api/v1/test/1",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"test",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Questions",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"test_id\": 1,\r\n    \"part\": \"1\",\r\n    \"question_number\": 2,\r\n    \"paragraph\": null,\r\n    \"question\": \"She is ... now\",\r\n    \"options\": [\r\n        {\r\n            \"answer\": \"A\",\r\n            \"content\": \"running\"\r\n        },\r\n        {\r\n            \"answer\": \"B\",\r\n            \"content\": \"Cat\"\r\n        },\r\n        {\r\n            \"answer\": \"C\",\r\n            \"content\": \"Dog\"\r\n        }\r\n    ],\r\n    \"correct_answer\": \"B\",\r\n    \"audio_url\": \"https://example.com/audio.mp3\",\r\n    \"image_url\": \"https://example.com/image.jpg\",\r\n    \"explanation\": \"The man is reading a book in the image.\",\r\n    \"test_section\": \"LISTEN\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:8080/api/v1/questions/2",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"questions",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deleted Test",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:8080/api/v1/test/5",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"test",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deleted Question",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:8080/api/v1/questions/1",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"questions",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Tests",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"TOEIC ETS1\",\r\n    \"total_parts\": 7,\r\n    \"questions\": 200,\r\n    \"test_type\": \"TOEIC\",\r\n    \"year\": \"2025\",\r\n    \"is_active\" : true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:8080/api/v1/test",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"test"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Question Part",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"test_id\": 1,\r\n    \"part\": \"1\",\r\n    \"question_number\": 2,\r\n    \"paragraph\": null,\r\n    \"question\": \"She is ... now\",\r\n    \"options\": [\r\n        {\r\n            \"answer\": \"A\",\r\n            \"content\": \"running\"\r\n        },\r\n        {\r\n            \"answer\": \"B\",\r\n            \"content\": \"Cat\"\r\n        },\r\n        {\r\n            \"answer\": \"C\",\r\n            \"content\": \"Dog\"\r\n        }\r\n    ],\r\n    \"correct_answer\": \"B\",\r\n    \"audio_url\": \"https://example.com/audio.mp3\",\r\n    \"image_url\": \"https://example.com/image.jpg\",\r\n    \"explanation\": \"The man is reading a book in the image.\",\r\n    \"test_section\": \"Listening\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:8080/api/v1/questions",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"questions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get UserInfo",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE3NDAyNzY4NTksImlkIjoiMSIsInN1YiI6InRyaW1haSIsInVzZXJuYW1lIjoidHJpbWFpIn0.bykalRHWn-wyHh_iRpP9YYY4iJLp2Dh5c_POMmZeTXs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:8080/api/v1/user/userInfo",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"userInfo"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
