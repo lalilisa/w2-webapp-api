@@ -13,7 +13,7 @@
 
 # Pre
 ```aiignore
-    Intall Kafka, Redis, Postgresql before start Project
+    Install Kafka, Redis, Postgresql before start Project
     
     You can using my docker-compose.yml file
 ```
